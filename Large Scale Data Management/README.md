@@ -2,37 +2,30 @@
 
 ![apache_spark](./Images/Logo.jpeg)
 
-## *Table of Contents*
-- [***Introduction***](#introduction)
-- [***Data***](#data)
-- [***Task 1***](#task-1)
-- [***Task 2***](#task-2)
-- [***Task 3***](#task-3)
-- [***Task 4***](#task-4)
-- [***Task 5***](#task-5)
-- [***Conclusion***](#conclusion)
-
 ## *Introduction*
 
-- For the final project, we used the Apache Spark to execute queries on datasets
+- For the final project, we are going to use Apache Spark to execute queries on datasets
 - There are two basic APIs for query execution, the [RDD API](https://spark.apache.org/docs/2.4.4/rdd-programming-guide.html) and the [DataFrame/SQL API](https://spark.apache.org/docs/2.4.4/sql-programming-guide.html)
 
-## *Data*
+## *Dataset*
 
-- The data files were provided in the context of the course content
-- The files were in `csv` format and executing queries in this format is not efficient
+- In order to download the dataset you need to execute the following commands in your master machine.
+    - `wget https://www.dropbox.com/s/yprrbtqhy0fi6os/datasets.tar.gz?dl=0`
+    - `mv datasets.tar.gz?dl=0 datasets.tar.gz`
+    - `tar -xzf datasets.tar.gz`
+- We observe that the files are in **csv** format and we know that executing queries in this format is not efficient
 - To optimize data access, databases traditionally load data into a specific designed binary format
-- Spark has a similar approach too and we can convert datasets to a special format named `parquet`
-- The `parquet` file format is a columnar file format and you can read more about it [in this link](https://parquet.apache.org/)
-- The `parquet` file format has major benefits:
+- Spark has a similar approach and thus we will convert the dataset files to a special format named **parquet**
+- The **parquet** file is a columnar file format designed for efficient data storage and retrieval. You can read more about it [here](https://parquet.apache.org/).
+- The **parquet** file format has two major benefits:
   - *It has smaller footprint in memory and disk and therefore optimizes I/O, reducing execution time*
   - *It maintains additional information, such as statistics on the dataset, which helps on more efficient processing*
 
 ## *Task 1*
 
-- We created a files directory on HDFS and uploaded the `csv` files
-- We also convert the files to `parquet` and uploaded them on HDFS as well
-- The commands used are as follows:
+- We created a file directory on HDFS and uploaded the **csv** files
+- We also converted the files to **parquet** and uploaded them on HDFS as well
+- The following commands were used:
   - `./hdfs dfs -mkdir /lsdm_files`
   - `./hdfs dfs -mv /departmentsR.csv /lsdm_files/departmentsR.csv`
   - `./hdfs dfs -mv /departmentsR.csv /lsdm_files/employeesR.csv`
@@ -44,30 +37,29 @@
 
 ## *Task 2*
 
-- Using RDDs, we wrote code to answer some queries
-- We could use either the `csv` or `parquet` files we uploaded on HDFS
-- The queries and the code can be found [here](https://github.com/sapaladas/msc_data_science/blob/main/q2-large_scale_data_management/using_apache_spark_to_execute_queries/queries/rdd_queries.py)
+- In this task we used RDDs to query the dataset and provide the answears
+- We were permitted to use either the **csv** or **parquet** files we uploaded
+- The queries and code can be found [here](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/blob/main/Large%20Scale%20Data%20Management/Queries/Queries%20-%20RDD.py)
 
 ## *Task 3*
 
-- Using DataFrames, we wrote code to answer some queries
-- We should use the `parquet` files we created and uploaded on HDFS
-- The queries and the code can be found [here](https://github.com/sapaladas/msc_data_science/blob/main/q2-large_scale_data_management/using_apache_spark_to_execute_queries/queries/dataframe_queries.py)
+- In this task we used Dataframes to query the dataset and provide the answears
+- Here we used the **parquet** files we created and uploaded
+- The queries and code can be found [here](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/blob/main/Large%20Scale%20Data%20Management/Queries/Queries%20-%20Dataframe.py)
 
 ## *Task 4*
 
-- Using Spark SQL, we wrote code to answer some queries
-- We should use both the `csv` and `parquet` files we uploaded on HDFS
-- The queries and the code can be found [here](https://github.com/sapaladas/msc_data_science/blob/main/q2-large_scale_data_management/using_apache_spark_to_execute_queries/queries/sql_queries_csv.py) (`csv`) and [here](https://github.com/sapaladas/msc_data_science/blob/main/q2-large_scale_data_management/using_apache_spark_to_execute_queries/queries/sql_queries_parquet.py) (`parquet`)
+- In this task we used Spark SQL to query the dataset and provide the answears
+- We used both the **csv** and **parquet** files we uploaded
+- The queries and the code can be found [here](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/blob/main/Large%20Scale%20Data%20Management/Queries/Queries%20-%20SQL%20(csv).py) (**csv**) and [here](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/blob/main/Large%20Scale%20Data%20Management/Queries/Queries%20-%20SQL%20(parquet).py) (**parquet**)
 
 ## *Task 5*
 
-- For every query, we measured the execution time of each of the following scenarios:
+- In this task, we measured the execution time of each query for each of the following scenarios:
   - *1. Map/Reduce - RDD API*
-  - *2. Spark SQL on `csv` files*
-  - *3. Spark SQL on `parquet` files*
-- Finally, we created a bar chart with the execution times grouped by each query
-- The results of each of the aforementioned scenarions can be seen below
+  - *2. Spark SQL on **csv** files*
+  - *3. Spark SQL on **parquet** files*
+- The results are displayed below
 
 ![task 5 graph](./Images/ExecutionTimesPlot.png)
 
@@ -75,6 +67,6 @@
 
 ## *Conclusion*
 
-- According to the graph, it is obvious that we had a clear winner in terms of execution times
-- Using Spark SQL on `parquet` files to execute the queries seemed to be the fastest way for someone to proceed with
-- On the other hand, MapReduce using the RDD API seemed to be by far the slowest and less efficient choice
+- According to the results, we have a clear winner in terms of execution times
+- Query execution using Spark SQL on **parquet** files seems to yield the best performance
+- On the opposite side, MapReduce using the RDD API seems to be by far the less efficient choice
