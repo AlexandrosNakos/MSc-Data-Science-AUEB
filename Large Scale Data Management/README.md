@@ -1,6 +1,6 @@
 # *Query Execution in Apache Spark*
 
-![apache_spark](./images/Logo.jpeg)
+![apache_spark](./Images/Logo.jpeg)
 
 ## *Table of Contents*
 - [***Introduction***](#introduction)
@@ -40,7 +40,7 @@
   - `./hdfs dfs -mv /departmentsR.csv /lsdm_files/movies.csv`
   - `./hdfs dfs -mv /departmentsR.csv /lsdm_files/ratings.csv`
 
-![task 1](./images/Commands.png)
+![task 1](./Images/Commands.png)
 
 ## *Task 2*
 
@@ -69,9 +69,9 @@
 - Finally, we created a bar chart with the execution times grouped by each query
 - The results of each of the aforementioned scenarions can be seen below
 
-![task 5 graph](./images/ExecutionTimesPlot.png)
+![task 5 graph](./Images/ExecutionTimesPlot.png)
 
-![task 5 table](./images/ExecutionTimesTable.png)
+![task 5 table](./Images/ExecutionTimesTable.png)
 
 ## *Conclusion*
 
