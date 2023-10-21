@@ -6,6 +6,6 @@ Created on Tue Dec 28 19:43:22 2021
 """
 
 config = {
-    'client_id' : 'xxxxxxxxxxxxxxxxxxxxx',
+    'client_id' : 'xxxxxxxxxxxxxxxxxxxxxx',
     'client_secret' :'xxxxxxxxxxxxxxxxxxx'
 }
