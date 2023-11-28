@@ -4,17 +4,6 @@
 *MSc in Data Science, Department of Informatics*  
 *Athens University of Economics and Business*
 
-![pagerank](./images/banner.jpg)
-
-## *Table of Contents*
-
-1. [Introduction](#introduction)
-2. [Project Overview](#project-overview)
-3. [Data](#data)
-4. [Resources](#resources)
-5. [The 2 Methods](#the-2-methods)
-6. [Results](#results)
-
 ## *Introduction*
 
 - PageRank is an algorithm used by Google Search to rank web pages in their search engine results
@@ -65,50 +54,3 @@
 - However, convergence is only guaranteed if one of the following two conditions is met:
     - the matrix is strictly diagonally dominant, or
     - the matrix is symmetric and positive definite
-
-## *Results*
-
-- Based on the paper [Deeper Inside PageRank](https://github.com/sapaladas/msc_data_science/blob/main/q3-numerical_optimization_and_large_scale_linear_algebra/pagerank/readings/pagerank.pdf), the PageRank, using each method, can be calculated as follows:
-- Power Method:  $x^{(k)T} = \alpha x^{(k-1)T} P + (\alpha x^{(k-1)T} a + (1-\alpha))v^T $
-- Gauss-Seidel Method:  $\pi^{T}=(v_{1}^{T}(I-\alpha P_{11})^{-1} | \alpha v_{1}^{T}(I-\alpha P_{11})^{-1} P_{12} + v_{2}^{T}) $
-
-**Power method vs Gauss-Seidel method, when $\alpha = 0.85$**
-
-- Both methods return the same results for the first 30 nodes, while after that they start to differentiate
-- The Power method solves the PageRank problem in **92 iterations** and takes **1.6** seconds to converge
-- The Gauss-Seidel method needs only **49 iterations**, but it requires almost **150x time** to converge
-
-|   | Power Method | Gauss-Seidel Method |
-| :-: | :----------: | :-----------------: |
-| Iterations | 92 | 49 |
-| Wall Time (s) | 1.6 | 242.7 |
-
-**Power method vs Gauss-Seidel method, when $\alpha = 0.99$**
-
-- Now, both methods return the same results only for the first 10 nodes
-- The Power method solves the PageRank problem in **1393 iterations** and takes **35 seconds** to converge
-- The Gauss-Seidel method needs **less iterations** (610), but it requires **way a lot more time** (3812 seconds)
-
-|   | Power Method | Gauss-Seidel Method |
-| :-: | :----------: | :-----------------: |
-| Iterations | 1393 | 610 |
-| Wall Time (s) | 35.0 | 3812.4 |
-
-#### Convergence Rate
-
-- In general, higher ranked nodes need on average more iterations to converge than lower ranked nodes
-- The reason is that the lower ranked nodes have more outbound links than inbound links
-- This results in their pagerank converging relatively quickly
-- On the contrary, higher ranked nodes tend to have many inbound links
-- This results in the pagerank keep increasing until it converges
-- And this makes perfect sense if we consider again, what PageRank is, in fact, and how it works
-- PageRank works by counting the number and quality of links to a page
-- Doing so, it tries to determine a rough estimate of how important the website is
-- The underlying assumption is that more important websites are likely to receive more links from other sites
-
-| Method | Avg Node Convergence Rate | N1 | N2 | N3 | N4 | N5 | N6 | N7 | N8 | N9 | N10 |
-| :-: | :-----------------------: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| PM w. 0.85 | 55 | 82 | 78 | 75 | 84 | 72 | 77 | 61 | 61 | 76 | 66 |
-| PM w. 0.99 | 690 | 866 | 1346 | 957 | 942 | 890 | 959 | 868 | 751 | 751 | 1227 |
-| GS w. 0.85 | 34 | 47 | 33 | 43 | 48 | 42 | 35 | 47 | 47 | 40 | 39 |
-| GS w. 0.99 | 328 | 463 | 0 | 588 | 499 | 475 | 588 | 463 | 594 | 594 | 0 |
