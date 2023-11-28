@@ -4,15 +4,6 @@
 *MSc in Data Science, Department of Informatics*  
 *Athens University of Economics and Business*
 
-![steganography](./images/steganography_image.jpeg)
-
-## *Table of Contents*
-
-1. [Introduction](#introduction)
-2. [Project Overview](#project-overview)
-3. [Resources](#resources)
-4. [Results & Conclusion](#results--conclusion)
-
 ## *Introduction*
 
 - In steganography, a secret message is embedded in an image in such a way that the image looks the same
@@ -34,20 +25,3 @@
 - The modified image  $x+z $ may have entries outside the range $[0, 1]$
 - We replace any negative values in the modified image with zero, and any values greater than one with one
 - We adjust $\alpha$ until the original and modified images look the same, but the message is decoded correctly
-
-## *Resources*
-
-- Packages: `numpy`, `pandas`, `matplotlib`, `seaborn`, `sklearn`
-- Software: Jupyter Notebook
-
-## *Results & Conclusion*
-
-- The higher the value of $\alpha$, the more noise is added to the image
-- The more noise we add to the image, the easier it is to encode and decode clearly a secret message
-- In our case, we used the word "hello" as the secret message
-- We tried a few different values of $\alpha$ for encoding and decoding the message
-- For $\alpha=0.0001$ we can encode and decode the secret message, without the image carrying any noise
-- The decoding accuracy at this value of $\alpha$ was 100%
-- The model was able to correctly estimate and decode all 40 bytes of the secret message
-
-![image results](./images/cameraman_0.0001.svg)
