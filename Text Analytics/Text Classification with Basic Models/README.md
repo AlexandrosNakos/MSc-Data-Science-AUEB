@@ -57,8 +57,6 @@
 - To address time and resource constraints, we reduced the dimensionality to 2000 features.
 - This reduction led to an explained variance ratio of 82% concerning our initial vectors.
 
-## *Predictions*
-
 ### Hyperparameter Tuning
 
 - In our prediction phase, we incorporated not only a baseline dummy classifier but also four additional classifiers.
