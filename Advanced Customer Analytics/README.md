@@ -2,5 +2,5 @@
 
 ### *Projects*
 
-- [*Scraping and Summarizing Glassdoor Reviews for Sentiment Analysis*](https://github.com/sapaladas/msc_data_science/tree/main/q4-advanced_customer_analytics/scraping_and_summarizing_glassdoor_reviews)
-- [*Predicting Telco Customer Churn*](https://github.com/sapaladas/msc_data_science/tree/main/q4-advanced_customer_analytics/telco_customer_churn)
+- [*Scraping and Summarizing Record Reviews*](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/tree/main/Advanced%20Customer%20Analytics/Scraping%20and%20Summarizing%20Record%20Reviews)
+- [*Telco Customer Churn*](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/tree/main/Advanced%20Customer%20Analytics/Telco%20Customer%20Churn)
