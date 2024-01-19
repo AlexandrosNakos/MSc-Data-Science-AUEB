@@ -1,3 +1,3 @@
 # *Telco Customer Churn*
 
-*The full presentation of the project can be found [here.](https://github.com/sapaladas/msc_data_science/blob/main/q4-advanced_customer_analytics/telco_customer_churn/presentation/presentation.pdf)*
+*The full presentation can be found [here.](https://github.com/AlexandrosNakos/MSc-Data-Science-AUEB/blob/main/Advanced%20Customer%20Analytics/Telco%20Customer%20Churn/Presentation/Telco%20Customer%20Churn%20Presentation.pdf)*
