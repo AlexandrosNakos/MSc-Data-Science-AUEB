@@ -4,6 +4,7 @@
 *Department of Informatics*  
 *Athens University of Economics and Business*
 
+
 ### Quarter 1
  - Practical Data Science
  - Probability and Statistics for Data Analysis
