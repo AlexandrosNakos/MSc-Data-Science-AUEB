@@ -1,3 +1,3 @@
-# *Image Classifications with MLPs & CNNs*
+# *Image Classification with MLPs & CNNs*
 
 *TBA*
